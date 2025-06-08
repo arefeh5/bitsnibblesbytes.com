@@ -10,7 +10,7 @@ export default function Footer() {
             {/* Connect with us */}
             <div className="lg:col-span-3">
               <Link href="/contact">
-                <h4 className="text-lg font-semibold text-gray-900 mb-6 hover:text-green-500 hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)] transition-all duration-300 cursor-pointer">Connect with us</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-6 hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">Connect with us</h4>
               </Link>
               <div className="space-y-3 text-gray-600">
                 <p>Office: (919) 900-7115</p>
@@ -27,20 +27,20 @@ export default function Footer() {
             {/* Solutions */}
             <div className="lg:col-span-2">
               <Link href="/solutions">
-                <h4 className="text-lg font-semibold text-gray-900 mb-6 hover:text-green-500 hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)] transition-all duration-300 cursor-pointer">Solutions</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-6 hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">Solutions</h4>
               </Link>
               <div className="space-y-3 text-gray-600">
                 <Link href="/solutions">
-                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)] transition-all duration-300 cursor-pointer">QuickBooks</p>
+                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">QuickBooks</p>
                 </Link>
                 <Link href="/solutions">
-                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)] transition-all duration-300 cursor-pointer">CRM System</p>
+                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">CRM System</p>
                 </Link>
                 <Link href="/solutions">
-                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)] transition-all duration-300 cursor-pointer">Excel</p>
+                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">Excel</p>
                 </Link>
                 <Link href="/solutions">
-                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)] transition-all duration-300 cursor-pointer">SQL Server</p>
+                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">SQL Server</p>
                 </Link>
               </div>
             </div>
@@ -50,10 +50,10 @@ export default function Footer() {
               <h4 className="text-lg font-semibold text-gray-900 mb-6">Company</h4>
               <div className="space-y-3 text-gray-600">
                 <Link href="/about">
-                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)] transition-all duration-300 cursor-pointer">About Us</p>
+                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">About Us</p>
                 </Link>
                 <Link href="/contact">
-                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)] transition-all duration-300 cursor-pointer">Contact Us</p>
+                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">Contact Us</p>
                 </Link>
               </div>
             </div>
