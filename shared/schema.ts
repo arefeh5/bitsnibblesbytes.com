@@ -12,9 +12,8 @@ export const contactMessages = pgTable("contact_messages", {
   id: serial("id").primaryKey(),
   firstName: text("first_name").notNull(),
   lastName: text("last_name").notNull(),
-  companyName: text("company_name"),
+  companyName: text("company_name").notNull(),
   email: text("email").notNull(),
-  subject: text("subject"),
   message: text("message").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
@@ -29,7 +28,6 @@ export const insertContactMessageSchema = createInsertSchema(contactMessages).pi
   lastName: true,
   companyName: true,
   email: true,
-  subject: true,
   message: true,
 });
 
