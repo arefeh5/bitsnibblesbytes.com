@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import solveTsImage from "@assets/solveTs_1749360588140.png";
 
 export default function Solutions() {
   const solutions = [
@@ -61,49 +62,16 @@ export default function Solutions() {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      {/* Hero Section with Code Background */}
-      <section className="relative min-h-screen bg-gray-900 overflow-hidden">
-        {/* Code Background */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20"></div>
-          <pre className="text-green-400 text-sm leading-relaxed p-8 font-mono">
-{`  .box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    padding: 40px;
-    background: rgba(0, 0, 0, .8);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.5);
-    border-radius: 10px;
-  }
-  
-  .box h3{
-    margin: 0 0 30px;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .box .inputBox{
-    position: relative;
-  }
-  
-  .box .inputBox input{
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-  }`}
-          </pre>
+      {/* Hero Section with solveTs Background */}
+      <section className="relative min-h-screen overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${solveTsImage})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
         {/* Content */}
