@@ -114,7 +114,7 @@ export default function Solutions() {
               <div 
                 key={index} 
                 id={solution.title.toLowerCase().replace(/\s+/g, '-')}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 scroll-mt-24"
+                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 scroll-mt-32"
               >
                 <div className="flex items-center mb-6">
                   <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mr-4">
