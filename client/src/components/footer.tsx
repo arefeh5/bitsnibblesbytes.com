@@ -30,16 +30,16 @@ export default function Footer() {
                 <h4 className="text-lg font-semibold text-gray-900 mb-6 hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">Solutions</h4>
               </Link>
               <div className="space-y-3 text-gray-600">
-                <Link href="/solutions">
+                <Link href="/solutions#quickbooks">
                   <p className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">QuickBooks</p>
                 </Link>
-                <Link href="/solutions">
+                <Link href="/solutions#crm-system">
                   <p className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">CRM System</p>
                 </Link>
-                <Link href="/solutions">
+                <Link href="/solutions#excel">
                   <p className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">Excel</p>
                 </Link>
-                <Link href="/solutions">
+                <Link href="/solutions#sql-server">
                   <p className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">SQL Server</p>
                 </Link>
               </div>

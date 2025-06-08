@@ -92,7 +92,11 @@ export default function Solutions() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             {solutions.map((solution, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+              <div 
+                key={index} 
+                id={solution.title.toLowerCase().replace(/\s+/g, '-')}
+                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 scroll-mt-24"
+              >
                 <div className="flex items-center mb-6">
                   <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mr-4">
                     {solution.icon}
