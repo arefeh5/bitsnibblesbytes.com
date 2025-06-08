@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { Link, useLocation } from "wouter";
 import bnbLogo from "@assets/image1_1749360591972.png";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,24 +47,26 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("home")}
-              className={cn(
-                "transition-colors duration-200 font-medium text-lg",
-                isScrolled ? "text-gray-700 hover:text-green-500" : "text-white hover:text-green-300"
-              )}
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className={cn(
-                "transition-colors duration-200 font-medium text-lg",
-                isScrolled ? "text-gray-700 hover:text-green-500" : "text-white hover:text-green-300"
-              )}
-            >
-              Solutions
-            </button>
+            <Link href="/">
+              <button
+                className={cn(
+                  "transition-colors duration-200 font-medium text-lg",
+                  isScrolled ? "text-gray-700 hover:text-green-500" : "text-white hover:text-green-300"
+                )}
+              >
+                Home
+              </button>
+            </Link>
+            <Link href="/solutions">
+              <button
+                className={cn(
+                  "transition-colors duration-200 font-medium text-lg",
+                  isScrolled ? "text-gray-700 hover:text-green-500" : "text-white hover:text-green-300"
+                )}
+              >
+                Solutions
+              </button>
+            </Link>
             <button
               onClick={() => scrollToSection("about")}
               className={cn(
@@ -107,18 +111,22 @@ export default function Navigation() {
         {isOpen && (
           <div className="md:hidden bg-white border-t border-gray-100">
             <div className="px-4 py-3 space-y-3">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="block py-3 text-gray-700 hover:text-green-500 transition-colors duration-200 font-medium text-lg"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection("services")}
-                className="block py-3 text-gray-700 hover:text-green-500 transition-colors duration-200 font-medium text-lg"
-              >
-                Solutions
-              </button>
+              <Link href="/">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="block py-3 text-gray-700 hover:text-green-500 transition-colors duration-200 font-medium text-lg"
+                >
+                  Home
+                </button>
+              </Link>
+              <Link href="/solutions">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="block py-3 text-gray-700 hover:text-green-500 transition-colors duration-200 font-medium text-lg"
+                >
+                  Solutions
+                </button>
+              </Link>
               <button
                 onClick={() => scrollToSection("about")}
                 className="block py-3 text-gray-700 hover:text-green-500 transition-colors duration-200 font-medium text-lg"
