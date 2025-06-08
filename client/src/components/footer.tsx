@@ -1,7 +1,8 @@
 import thoughtsImage from "@assets/thoughts final_1749360555159.png";
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
 
-const handleNavigation = (href: string) => {
+const navigateToSection = (href: string) => {
+  // Force navigation with hash
   window.location.href = href;
 };
 
@@ -14,7 +15,7 @@ export default function Footer() {
             {/* Connect with us */}
             <div className="lg:col-span-3">
               <h4 
-                onClick={() => handleNavigation('/contact')}
+                onClick={() => navigateToSection('/contact')}
                 className="text-lg font-semibold text-gray-900 mb-6 hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer"
               >
                 Connect with us
@@ -34,32 +35,32 @@ export default function Footer() {
             {/* Solutions */}
             <div className="lg:col-span-2">
               <h4 
-                onClick={() => handleNavigation('/solutions')}
+                onClick={() => navigateToSection('/solutions')}
                 className="text-lg font-semibold text-gray-900 mb-6 hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer"
               >
                 Solutions
               </h4>
               <div className="space-y-3 text-gray-600">
                 <p 
-                  onClick={() => handleNavigation('/solutions#quickbooks')}
+                  onClick={() => navigateToSection('/solutions#quickbooks')}
                   className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer"
                 >
                   QuickBooks
                 </p>
                 <p 
-                  onClick={() => handleNavigation('/solutions#crm-system')}
+                  onClick={() => navigateToSection('/solutions#crm-system')}
                   className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer"
                 >
                   CRM System
                 </p>
                 <p 
-                  onClick={() => handleNavigation('/solutions#excel')}
+                  onClick={() => navigateToSection('/solutions#excel')}
                   className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer"
                 >
                   Excel
                 </p>
                 <p 
-                  onClick={() => handleNavigation('/solutions#sql-server')}
+                  onClick={() => navigateToSection('/solutions#sql-server')}
                   className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer"
                 >
                   SQL Server
@@ -72,13 +73,13 @@ export default function Footer() {
               <h4 className="text-lg font-semibold text-gray-900 mb-6">Company</h4>
               <div className="space-y-3 text-gray-600">
                 <p 
-                  onClick={() => handleNavigation('/about')}
+                  onClick={() => navigateToSection('/about')}
                   className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer"
                 >
                   About Us
                 </p>
                 <p 
-                  onClick={() => handleNavigation('/contact')}
+                  onClick={() => navigateToSection('/contact')}
                   className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer"
                 >
                   Contact Us
