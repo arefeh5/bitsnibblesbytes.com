@@ -1,3 +1,5 @@
+import bnbLogo from "@assets/image1_1749360591972.png";
+
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -13,13 +15,11 @@ export default function Footer() {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <div>
-                <div className="text-xl font-bold">BnB Software</div>
-                <div className="text-xs text-green-400 font-medium">bits • nibbles • bytes</div>
-              </div>
+              <img 
+                src={bnbLogo} 
+                alt="BnB Software Logo" 
+                className="w-12 h-12 object-contain"
+              />
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
               Delivering innovative software solutions that transform ideas into powerful digital experiences.
