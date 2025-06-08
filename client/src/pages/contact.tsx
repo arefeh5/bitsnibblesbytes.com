@@ -72,7 +72,7 @@ export default function Contact() {
         <Navigation />
         
         {/* Thank You Section */}
-        <section className="relative min-h-screen overflow-hidden">
+        <section className="relative min-h-screen overflow-hidden pt-28">
           {/* Background Video */}
           <video
             autoPlay
@@ -112,7 +112,7 @@ export default function Contact() {
       <Navigation />
       
       {/* Contact Form Section */}
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden pt-28">
         {/* Background Video */}
         <video
           autoPlay
