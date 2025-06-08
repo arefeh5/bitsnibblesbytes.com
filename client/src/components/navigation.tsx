@@ -35,13 +35,13 @@ export default function Navigation() {
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-28">
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
               src={bnbLogo} 
               alt="BnB Software Logo" 
-              className="w-16 h-16 object-contain"
+              className="w-24 h-24 object-contain"
             />
           </div>
 
