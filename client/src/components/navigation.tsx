@@ -35,13 +35,11 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">B</span>
-            </div>
-            <div>
-              <div className="text-xl font-bold text-gray-900">BnB</div>
-              <div className="text-xs text-green-500 font-medium">bits • nibbles • bytes</div>
-            </div>
+            <img 
+              src="/src/assets/image1_1749360591972.png" 
+              alt="BnB Software Logo" 
+              className="w-12 h-12 object-contain"
+            />
           </div>
 
           {/* Desktop Navigation */}

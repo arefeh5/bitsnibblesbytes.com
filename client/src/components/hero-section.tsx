@@ -67,15 +67,15 @@ export default function HeroSection() {
               <div className="ml-4 text-sm text-gray-400">BnBSoftware.tsx</div>
             </div>
             <div className="text-sm font-mono text-left">
-              <div className="text-purple-400">const <span className="text-blue-400">BnBSoftware</span> = () => {`{`}</div>
+              <div className="text-purple-400">const <span className="text-blue-400">BnBSoftware</span> = () {'=>'} {'{'}</div>
               <div className="text-gray-400 ml-4">return (</div>
               <div className="text-red-400 ml-8">&lt;<span className="text-blue-400">Innovation</span></div>
-              <div className="text-green-500 ml-12">solutions={`{`}<span className="text-yellow-400">"cutting-edge"</span>{`}`}</div>
-              <div className="text-green-500 ml-12">quality={`{`}<span className="text-yellow-400">"premium"</span>{`}`}</div>
-              <div className="text-green-500 ml-12">support={`{`}<span className="text-yellow-400">"24/7"</span>{`}`}</div>
+              <div className="text-green-500 ml-12">solutions={'{'}<span className="text-yellow-400">"cutting-edge"</span>{'}'}</div>
+              <div className="text-green-500 ml-12">quality={'{'}<span className="text-yellow-400">"premium"</span>{'}'}</div>
+              <div className="text-green-500 ml-12">support={'{'}<span className="text-yellow-400">"24/7"</span>{'}'}</div>
               <div className="text-red-400 ml-8">/&gt;</div>
               <div className="text-gray-400 ml-4">);</div>
-              <div className="text-purple-400">{`};`}</div>
+              <div className="text-purple-400">{'};'}</div>
             </div>
           </div>
         </div>
