@@ -1,15 +1,11 @@
-import { TransactionalEmailsApi, SendSmtpEmail } from '@getbrevo/brevo';
-
 export class BrevoEmailService {
-  private apiInstance: TransactionalEmailsApi;
+  private apiKey: string;
   private fromEmail: string;
   private toEmail: string;
+  private apiUrl = 'https://api.brevo.com/v3/smtp/email';
 
   constructor() {
-    // Initialize Brevo API with API key
-    this.apiInstance = new TransactionalEmailsApi();
-    this.apiInstance.setApiKey('api-key', process.env.BREVO_API_KEY || '');
-    
+    this.apiKey = process.env.BREVO_API_KEY || '';
     this.fromEmail = process.env.FROM_EMAIL || 'contact@bnbytes.software';
     this.toEmail = process.env.TO_EMAIL || 'contact@bnbytes.software';
   }
@@ -21,18 +17,33 @@ export class BrevoEmailService {
     message: string;
     companyName?: string;
   }): Promise<void> {
-    const sendSmtpEmail = new SendSmtpEmail();
-    
-    sendSmtpEmail.subject = `New Contact Form Submission from ${contactData.firstName} ${contactData.lastName}`;
-    sendSmtpEmail.htmlContent = this.generateEmailTemplate(contactData);
-    sendSmtpEmail.textContent = this.generatePlainTextEmail(contactData);
-    sendSmtpEmail.sender = { name: "BnB Software", email: this.fromEmail };
-    sendSmtpEmail.to = [{ email: this.toEmail, name: "BnB Software Team" }];
-    sendSmtpEmail.replyTo = { email: contactData.email, name: `${contactData.firstName} ${contactData.lastName}` };
+    const emailData = {
+      sender: { name: "BnB Software", email: this.fromEmail },
+      to: [{ email: this.toEmail, name: "BnB Software Team" }],
+      replyTo: { email: contactData.email, name: `${contactData.firstName} ${contactData.lastName}` },
+      subject: `New Contact Form Submission from ${contactData.firstName} ${contactData.lastName}`,
+      htmlContent: this.generateEmailTemplate(contactData),
+      textContent: this.generatePlainTextEmail(contactData)
+    };
 
     try {
-      const result = await this.apiInstance.sendTransacEmail(sendSmtpEmail);
-      console.log('Contact form email sent successfully via Brevo:', result.body);
+      const response = await fetch(this.apiUrl, {
+        method: 'POST',
+        headers: {
+          'accept': 'application/json',
+          'api-key': this.apiKey,
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(emailData)
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Brevo API error: ${response.status} - ${errorText}`);
+      }
+
+      const result = await response.json();
+      console.log('Contact form email sent successfully via Brevo:', result.messageId);
     } catch (error) {
       console.error('Error sending contact form email via Brevo:', error);
       throw new Error('Failed to send email through Brevo');
@@ -148,9 +159,15 @@ You can reply directly to this email to respond to ${data.firstName}.
   async testConnection(): Promise<boolean> {
     try {
       // Test the connection by attempting to get account info
-      const accountApi = new brevo.AccountApi();
-      await accountApi.getAccount();
-      return true;
+      const response = await fetch('https://api.brevo.com/v3/account', {
+        method: 'GET',
+        headers: {
+          'accept': 'application/json',
+          'api-key': this.apiKey
+        }
+      });
+      
+      return response.ok;
     } catch (error) {
       console.error('Brevo connection test failed:', error);
       return false;
