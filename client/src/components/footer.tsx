@@ -1,6 +1,10 @@
 import thoughtsImage from "@assets/thoughts final_1749360555159.png";
 import { Link } from "wouter";
 
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 export default function Footer() {
   return (
     <footer className="bg-white">
@@ -27,7 +31,12 @@ export default function Footer() {
             {/* Solutions */}
             <div className="lg:col-span-2">
               <Link href="/solutions">
-                <h4 className="text-lg font-semibold text-gray-900 mb-6 hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">Solutions</h4>
+                <h4 
+                  onClick={scrollToTop}
+                  className="text-lg font-semibold text-gray-900 mb-6 hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer"
+                >
+                  Solutions
+                </h4>
               </Link>
               <div className="space-y-3 text-gray-600">
                 <Link href="/solutions#quickbooks">
@@ -50,10 +59,20 @@ export default function Footer() {
               <h4 className="text-lg font-semibold text-gray-900 mb-6">Company</h4>
               <div className="space-y-3 text-gray-600">
                 <Link href="/about">
-                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">About Us</p>
+                  <p 
+                    onClick={scrollToTop}
+                    className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer"
+                  >
+                    About Us
+                  </p>
                 </Link>
                 <Link href="/contact">
-                  <p className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer">Contact Us</p>
+                  <p 
+                    onClick={scrollToTop}
+                    className="hover:text-green-500 hover:drop-shadow-[0_0_3px_rgba(34,197,94,0.6)] transition-all duration-300 cursor-pointer"
+                  >
+                    Contact Us
+                  </p>
                 </Link>
               </div>
             </div>
