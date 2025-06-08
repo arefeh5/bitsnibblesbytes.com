@@ -67,15 +67,16 @@ export default function Navigation() {
                 Solutions
               </button>
             </Link>
-            <button
-              onClick={() => scrollToSection("about")}
-              className={cn(
-                "transition-colors duration-200 font-medium text-lg",
-                isScrolled ? "text-gray-700 hover:text-green-500" : "text-white hover:text-green-300"
-              )}
-            >
-              About Us
-            </button>
+            <Link href="/about">
+              <button
+                className={cn(
+                  "transition-colors duration-200 font-medium text-lg",
+                  isScrolled ? "text-gray-700 hover:text-green-500" : "text-white hover:text-green-300"
+                )}
+              >
+                About Us
+              </button>
+            </Link>
             <button
               onClick={() => scrollToSection("contact")}
               className={cn(
@@ -127,12 +128,14 @@ export default function Navigation() {
                   Solutions
                 </button>
               </Link>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="block py-3 text-gray-700 hover:text-green-500 transition-colors duration-200 font-medium text-lg"
-              >
-                About Us
-              </button>
+              <Link href="/about">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="block py-3 text-gray-700 hover:text-green-500 transition-colors duration-200 font-medium text-lg"
+                >
+                  About Us
+                </button>
+              </Link>
               <button
                 onClick={() => scrollToSection("contact")}
                 className="block py-3 text-gray-700 hover:text-green-500 transition-colors duration-200 font-medium text-lg"
