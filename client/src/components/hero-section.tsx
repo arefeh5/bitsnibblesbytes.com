@@ -1,3 +1,6 @@
+import bnbLogo from "@assets/image1_1749360591972.png";
+import cityBackground from "@assets/Delivering the Future (1)_1749360586074.png";
+
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -13,7 +16,7 @@ export default function HeroSection() {
       {/* Modern city skyline background */}
       <div className="absolute inset-0 opacity-20">
         <img 
-          src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+          src={cityBackground} 
           alt="Modern city skyline" 
           className="w-full h-full object-cover" 
         />
@@ -23,10 +26,11 @@ export default function HeroSection() {
         <div className="text-center">
           {/* BnB Logo Large */}
           <div className="flex justify-center mb-8">
-            <div className="bg-gradient-to-br from-green-500 to-green-600 p-6 rounded-2xl shadow-2xl">
-              <div className="text-6xl font-bold text-white">BnB</div>
-              <div className="text-green-200 font-medium text-lg mt-2">Software</div>
-            </div>
+            <img 
+              src={bnbLogo} 
+              alt="BnB Software Logo" 
+              className="w-48 h-48 object-contain drop-shadow-2xl"
+            />
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-green-300 bg-clip-text text-transparent">

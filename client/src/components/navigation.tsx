@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import bnbLogo from "@assets/image1_1749360591972.png";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
-              src="/src/assets/image1_1749360591972.png" 
+              src={bnbLogo} 
               alt="BnB Software Logo" 
               className="w-12 h-12 object-contain"
             />
