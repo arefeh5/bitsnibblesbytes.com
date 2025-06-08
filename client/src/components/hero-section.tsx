@@ -1,5 +1,5 @@
 import bnbLogo from "@assets/image1_1749360591972.png";
-import cityBackground from "@assets/Delivering the Future (1)_1749360586074.png";
+import cityBackground from "@assets/background_1749404028690.jpg";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
