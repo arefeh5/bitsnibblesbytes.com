@@ -2,12 +2,13 @@ import thoughtsImage from "@assets/thoughts final_1749360555159.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-4 gap-12">
+    <footer className="bg-white border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid lg:grid-cols-12 gap-8">
           {/* Connect with us */}
-          <div>
+          <div className="lg:col-span-3">
             <h4 className="text-lg font-semibold text-gray-900 mb-6">Connect with us</h4>
+            <div className="border-b border-gray-200 pb-4 mb-6"></div>
             <div className="space-y-3 text-gray-600">
               <p>Office: (919) 900-7115</p>
               <p>Mobile: (919) 501-0572</p>
@@ -21,8 +22,9 @@ export default function Footer() {
           </div>
 
           {/* Solutions */}
-          <div>
+          <div className="lg:col-span-2">
             <h4 className="text-lg font-semibold text-gray-900 mb-6">Solutions</h4>
+            <div className="border-b border-gray-200 pb-4 mb-6"></div>
             <div className="space-y-3 text-gray-600">
               <p>QuickBooks</p>
               <p>CRM System</p>
@@ -32,8 +34,9 @@ export default function Footer() {
           </div>
 
           {/* Company */}
-          <div>
+          <div className="lg:col-span-2">
             <h4 className="text-lg font-semibold text-gray-900 mb-6">Company</h4>
+            <div className="border-b border-gray-200 pb-4 mb-6"></div>
             <div className="space-y-3 text-gray-600">
               <p>About Us</p>
               <p>Contact Us</p>
@@ -41,7 +44,7 @@ export default function Footer() {
           </div>
 
           {/* Thoughts of A Programmer */}
-          <div>
+          <div className="lg:col-span-5">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img 
                 src={thoughtsImage} 
