@@ -12,8 +12,8 @@ export const contactMessages = pgTable("contact_messages", {
   id: serial("id").primaryKey(),
   firstName: text("first_name").notNull(),
   lastName: text("last_name").notNull(),
+  companyName: text("company_name").notNull(),
   email: text("email").notNull(),
-  subject: text("subject").notNull(),
   message: text("message").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
@@ -26,8 +26,8 @@ export const insertUserSchema = createInsertSchema(users).pick({
 export const insertContactMessageSchema = createInsertSchema(contactMessages).pick({
   firstName: true,
   lastName: true,
+  companyName: true,
   email: true,
-  subject: true,
   message: true,
 });
 

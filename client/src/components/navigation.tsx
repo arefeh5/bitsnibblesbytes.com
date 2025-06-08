@@ -77,21 +77,23 @@ export default function Navigation() {
                 About Us
               </button>
             </Link>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className={cn(
-                "transition-colors duration-200 font-medium text-lg",
-                isScrolled ? "text-gray-700 hover:text-green-500" : "text-white hover:text-green-300"
-              )}
-            >
-              Contact
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="bg-green-400 text-white px-8 py-3 rounded-full hover:bg-green-500 transition-colors duration-200 font-medium text-lg"
-            >
-              Get Started
-            </button>
+            <Link href="/contact">
+              <button
+                className={cn(
+                  "transition-colors duration-200 font-medium text-lg",
+                  isScrolled ? "text-gray-700 hover:text-green-500" : "text-white hover:text-green-300"
+                )}
+              >
+                Contact
+              </button>
+            </Link>
+            <Link href="/contact">
+              <button
+                className="bg-green-400 text-white px-8 py-3 rounded-full hover:bg-green-500 transition-colors duration-200 font-medium text-lg"
+              >
+                Get Started
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -136,18 +138,22 @@ export default function Navigation() {
                   About Us
                 </button>
               </Link>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="block py-3 text-gray-700 hover:text-green-500 transition-colors duration-200 font-medium text-lg"
-              >
-                Contact
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="block py-3 text-white bg-green-400 rounded-full px-6 font-medium hover:bg-green-500 transition-colors duration-200 text-lg"
-              >
-                Get Started
-              </button>
+              <Link href="/contact">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="block py-3 text-gray-700 hover:text-green-500 transition-colors duration-200 font-medium text-lg"
+                >
+                  Contact
+                </button>
+              </Link>
+              <Link href="/contact">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="block py-3 text-white bg-green-400 rounded-full px-6 font-medium hover:bg-green-500 transition-colors duration-200 text-lg"
+                >
+                  Get Started
+                </button>
+              </Link>
             </div>
           </div>
         )}
