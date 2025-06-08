@@ -1,73 +1,82 @@
 export default function AboutSection() {
+  const features = [
+    {
+      title: "QuickBooks Specialists",
+      description: "Full support for Desktop Pro, Desktop Enterprise, and QuickBooks Online",
+      additionalInfo: "QBFC expertise",
+      icon: (
+        <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      )
+    },
+    {
+      title: "CRM & Workflow Automation",
+      description: "Custom integration to sync data across accounting, CRM and inventory systems",
+      additionalInfo: "Tailored solutions to eliminate manual entry and errors",
+      icon: (
+        <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      )
+    },
+    {
+      title: "SQL Server & Excel Solutions",
+      description: "Build Dashboards, automate reports and centralize data for real time insights",
+      additionalInfo: "",
+      icon: (
+        <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+        </svg>
+      )
+    },
+    {
+      title: "Dedicated Support",
+      description: "Assistance from a team that knows your business and personal goals",
+      additionalInfo: "",
+      icon: (
+        <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z" />
+        </svg>
+      )
+    }
+  ];
+
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About BnB Software</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Why choose BNB software?</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We are passionate software developers dedicated to transforming ideas into powerful digital solutions
+            We deliver cutting-edge solutions that transform your business operations
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Team Image */}
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl transform rotate-3"></div>
-            <div className="relative bg-white p-6 rounded-2xl shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                alt="BnB Software team collaboration" 
-                className="w-full h-64 md:h-80 object-cover rounded-xl" 
-              />
-            </div>
-          </div>
-
-          {/* About Content */}
-          <div>
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Expert Development</h3>
-                  <p className="text-gray-600">Leveraging cutting-edge technologies and industry best practices to deliver exceptional software solutions.</p>
-                </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group">
+              <div className="w-16 h-16 bg-green-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-100 transition-colors duration-300">
+                {feature.icon}
               </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
+              <div className="text-gray-600 mb-4 leading-relaxed">
+                <div className="flex items-start mb-2">
+                  <svg className="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
+                  <span className="text-sm">{feature.description}</span>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Innovation Driven</h3>
-                  <p className="text-gray-600">Constantly exploring new technologies and methodologies to stay ahead of the curve and provide innovative solutions.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Client-Focused</h3>
-                  <p className="text-gray-600">Building lasting partnerships through transparent communication, reliable delivery, and exceptional support.</p>
-                </div>
+                {feature.additionalInfo && (
+                  <div className="flex items-start">
+                    <svg className="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-sm">{feature.additionalInfo}</span>
+                  </div>
+                )}
               </div>
             </div>
-
-            <div className="mt-8 p-6 bg-gradient-to-r from-green-500/5 to-green-600/5 rounded-xl border border-green-500/20">
-              <p className="text-gray-700 font-medium italic">
-                "At BnB Software, we believe in the power of clean code, innovative design, and collaborative development to create software that not only meets requirements but exceeds expectations."
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
