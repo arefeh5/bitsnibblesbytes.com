@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactMessageSchema } from "@shared/schema";
+import { emailService } from "./email";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -9,7 +10,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/contact", async (req, res) => {
     try {
       const validatedData = insertContactMessageSchema.parse(req.body);
+      
+      // Store the message in storage
       const message = await storage.createContactMessage(validatedData);
+      
+      // Send email notification
+      try {
+        await emailService.sendContactFormEmail({
+          firstName: validatedData.firstName,
+          lastName: validatedData.lastName,
+          email: validatedData.email,
+          subject: validatedData.subject || 'Contact Form Submission',
+          message: validatedData.message,
+          companyName: validatedData.companyName
+        });
+        console.log('Email notification sent successfully');
+      } catch (emailError) {
+        console.error('Failed to send email notification:', emailError);
+        // Don't fail the request if email fails, just log the error
+      }
       
       res.json({ 
         success: true, 
@@ -40,6 +59,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Error fetching contact messages:", error);
       res.status(500).json({ 
         error: "Internal server error" 
+      });
+    }
+  });
+
+  // Email service test endpoint
+  app.post("/api/test-email", async (req, res) => {
+    try {
+      const isConnected = await emailService.testConnection();
+      if (isConnected) {
+        res.json({ 
+          success: true, 
+          message: "Email service is configured and working properly" 
+        });
+      } else {
+        res.status(500).json({ 
+          success: false, 
+          message: "Email service connection failed. Please check your email configuration." 
+        });
+      }
+    } catch (error) {
+      console.error("Email test error:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to test email service" 
       });
     }
   });
