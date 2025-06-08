@@ -1,8 +1,27 @@
+import { useEffect } from "react";
+import { useLocation } from "wouter";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import solveTsImage from "@assets/solveTs_1749360588140.png";
 
 export default function Solutions() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    // Handle anchor scroll when page loads or hash changes
+    if (location.includes('#')) {
+      const hash = location.split('#')[1];
+      const element = document.getElementById(hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+      }
+    }
+  }, [location]);
   const solutions = [
     {
       title: "QuickBooks",
