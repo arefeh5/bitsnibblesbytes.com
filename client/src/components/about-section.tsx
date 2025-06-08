@@ -35,8 +35,10 @@ export default function AboutSection() {
       description: "Assistance from a team that knows your business and personal goals",
       additionalInfo: "",
       icon: (
-        <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z" />
+        <svg className="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h1v-9H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-2v9h1c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/>
+          <circle cx="7" cy="16" r="1.5"/>
+          <circle cx="17" cy="16" r="1.5"/>
         </svg>
       )
     }
@@ -47,7 +49,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Why choose BNB software?</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We deliver cutting-edge solutions that transform your business operations
           </p>
         </div>
